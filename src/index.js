@@ -2,20 +2,37 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Markdown() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <input id="editor" type="text" placeholder="markdown" />
-        <p id="preview">HTML here</p>
-      </header>
-    </div>
-  );
+class Markdown extends React.component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInput = ''
+    }
+    this.handleInput = this.handleInput.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleInput() {
+
+  }
+
+  handleChange() {
+
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <textarea id="editor" type="text" onChange={this.handleInput}>Markdown here...</textarea>
+          <p id="preview">HTML here...</p>
+        </header>
+      </div>
+    );
+  }
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Markdown />
-  </React.StrictMode>,
+    <Markdown />,
   document.getElementById('root')
 );
