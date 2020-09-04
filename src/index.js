@@ -7,7 +7,7 @@ class Markdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: ''
+      userInput: '# Type Markdown here...'
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -22,8 +22,8 @@ class Markdown extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <textarea id="editor" type="text" onChange={this.handleChange} placeholder="markdown"></textarea>
-          <p id="preview" dangerouslySetInnerHTML={{ __html:marked(this.state.userInput) }}></p>
+          <textarea id="editor" type="text" onChange={this.handleChange} placeholder="# Type Markdown here..."></textarea>
+          <p id="preview" dangerouslySetInnerHTML={{ __html:marked(this.state.userInput)}}></p>
         </header>
       </div>
     );
