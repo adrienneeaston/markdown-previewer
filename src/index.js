@@ -1,31 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+var marked = require('marked');
 
-class Markdown extends React.component {
+class Markdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput = ''
+      userInput: '# Type Markdown here...'
     }
-    this.handleInput = this.handleInput.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleInput() {
-
-  }
-
-  handleChange() {
-
+  handleChange(event) {
+    this.setState({
+      userInput: event.target.value
+    });
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <textarea id="editor" type="text" onChange={this.handleInput}>Markdown here...</textarea>
-          <p id="preview">HTML here...</p>
+          <textarea id="editor" type="text" onChange={this.handleChange} placeholder="# Type Markdown here..."></textarea>
+          <p id="preview" dangerouslySetInnerHTML={{ __html:marked(this.state.userInput)}}></p>
         </header>
       </div>
     );
