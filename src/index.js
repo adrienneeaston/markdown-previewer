@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+var marked = require('marked');
 
 class Markdown extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Markdown extends React.Component {
       <div className="App">
         <header className="App-header">
           <textarea id="editor" type="text" onChange={this.handleChange} placeholder="markdown"></textarea>
-          <p id="preview">{this.state.userInput}</p>
+          <p id="preview" dangerouslySetInnerHTML={{ __html:marked(this.state.userInput) }}></p>
         </header>
       </div>
     );
