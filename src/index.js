@@ -1,17 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+
+class Markdown extends React.component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInput = ''
+    }
+    this.handleInput = this.handleInput.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleInput() {
+
+  }
+
+  handleChange() {
+
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <textarea id="editor" type="text" onChange={this.handleInput}>Markdown here...</textarea>
+          <p id="preview">HTML here...</p>
+        </header>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Markdown />,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
