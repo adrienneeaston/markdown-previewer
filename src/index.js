@@ -22,7 +22,7 @@ class Markdown extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <textarea id="editor" type="text" onChange={this.handleChange} placeholder="# Type Markdown here..."></textarea>
+          <textarea id="editor" type="text" onChange={this.handleChange} placeholder={this.state.userInput}></textarea>
           <p id="preview" dangerouslySetInnerHTML={{ __html:marked(this.state.userInput)}}></p>
         </header>
       </div>
