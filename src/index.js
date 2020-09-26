@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 var marked = require('marked');
 
-const placeholderText = `# h1 header  
-## h2 header
+const placeholderText = `# Enter your Markdown here...  
+
+## h2 header  
+
 [markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/)  
 
 Using \`<div>\` does not give semantic meaning to help accessibility  
@@ -14,10 +16,16 @@ List items:
 - list item two 
 
 As Shakespeare said:
-> The be or not to be?  
+> To be or not to be?  
 > That is the question.  
 
-\`console.log('Hello world!');\`  
+\`\`\`  
+function sayHello() {
+  console.log('Hello world!');
+}
+
+sayHello();
+\`\`\`
 
 ![Maine Coon cat](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3pwWDJXjpLbSRicFy2lpAZ3d-Z_ONGlITtw&usqp=CAU)  
 
