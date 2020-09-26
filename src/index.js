@@ -3,11 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 var marked = require('marked');
 
+const placeholderText = `# h1 header  
+## h2 header
+[markdown cheatsheet](https://www.markdownguide.org/cheat-sheet/)  
+
+Using \`<div>\` does not give semantic meaning to help accessibility  
+
+List items:
+- list item one  
+- list item two 
+
+As Shakespeare said:
+> The be or not to be?  
+> That is the question.  
+
+\`console.log('Hello world!');\`  
+
+![Maine Coon cat](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3pwWDJXjpLbSRicFy2lpAZ3d-Z_ONGlITtw&usqp=CAU)  
+
+It is so **fluffy**!`;
+
 class Markdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: '# Type Markdown here...'
+      userInput: placeholderText
     }
     this.handleChange = this.handleChange.bind(this);
   }
