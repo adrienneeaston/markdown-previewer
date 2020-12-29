@@ -5,7 +5,7 @@
 ### Author: Adrienne Easton
 
 ### Links and Resources
-* [Deployed site]()
+* [Deployed site](https://objective-easley-bbaf97.netlify.app/)
 
 ### Skills Practiced
 * HTML
