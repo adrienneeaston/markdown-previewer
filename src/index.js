@@ -11,25 +11,27 @@ const placeholderText = `# Enter your Markdown here...
 
 Using \`<div>\` does not give semantic meaning to help accessibility  
 
-List items:
-- list item one  
-- list item two 
-
-As Shakespeare said:
-> To be or not to be?  
-> That is the question.  
-
 \`\`\`  
 function sayHello() {
   console.log('Hello world!');
 }
 
 sayHello();
-\`\`\`
+\`\`\`  
+
+List items:  
+
+- list item one  
+- list item two  
+
+As Shakespeare said: 
+
+> To be or not to be?    
+> That is the question.  
 
 ![Maine Coon cat](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ3pwWDJXjpLbSRicFy2lpAZ3d-Z_ONGlITtw&usqp=CAU)  
 
-It is so **fluffy**!`;
+It is so **fluffy**!`;  
 
 class Markdown extends React.Component {
   constructor(props) {
@@ -50,7 +52,7 @@ class Markdown extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <textarea id="editor" type="text" onChange={this.handleChange} placeholder={this.state.userInput}></textarea>
+          <textarea id="editor" type="text" onChange={this.handleChange} value={this.state.userInput}></textarea>
           <p id="preview" dangerouslySetInnerHTML={{ __html:marked(this.state.userInput)}}></p>
         </header>
       </div>
